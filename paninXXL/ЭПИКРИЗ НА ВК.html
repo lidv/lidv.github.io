@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)http://pholi.com/medform01b.asp -->
+<html style="width:18.25cm;margin-left:2cm;margin-top:0.6cm;margin-bottom:0px;border-width:0px;overflow-y:auto"><!-- right margin = 21 - 18.25 - 2 = 0.75cm --><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+<title>ЭПИКРИЗ НА ВК</title>
+
+<style type="text/css">
+body *
+{
+	font-size:12pt;
+	font-family:"Times New Roman";
+}
+@media print
+{
+	#Header, #Footer {display: none !important;}
+	@page { margin: 0; }
+
+	.noprint {display: none !important;}
+
+	.cutline
+	{
+		position:absolute;
+		top:14.5cm;
+		left:0.75cm;
+		width:19.5cm;
+		border-style:dotted;
+		border-width:1px;
+	}
+}
+
+@media screen
+{
+	.noprint {}
+
+	.cutline
+	{
+		margin-top:1em;
+		border-style:dotted;
+		border-width:1px;
+	}
+}
+
+body
+{
+	background-color:#FFFFFF;
+	margin-left:0cm;
+	margin-right:0cm;
+	margin-top:0px;
+	margin-bottom:0px;
+	border-width:0px;
+	overflow-y:auto;
+}
+
+table
+{
+	border-spacing:0px;
+	border-style:none;
+	margin-bottom:0.2em;
+	width:100%;
+}
+
+td
+{
+	width:0%;
+	padding:0px 0px 0px 0px;
+	border-left-style:none;
+	border-right-style:none;
+	border-top-style:none;
+	border-bottom-style:solid;
+	border-bottom-color:#FFFFFF;
+	border-bottom-width:1px;
+	vertical-align:middle;
+	white-space:nowrap;
+}
+
+td.items
+{
+	padding-top:4px;
+}
+
+.button
+{
+	padding-left:0.5em;
+	text-align:right;
+}
+
+input[type="text"]
+{	
+	width:100%;
+	padding:0px 0px 0px 0px;
+	background-color:#FFFFB0;
+	border-style:none;	
+	font-weight:inherit;
+}
+
+input[type="number"]
+{	
+	width:100%;
+	padding:0px 0px 0px 0px;
+	background-color:#FFFFB0;
+	border-style:none;
+	font-weight:inherit;
+}
+
+textarea
+{
+	width:100%;
+	padding:0px 0px 0px 0px;
+	background-color:#FFFFB0;
+	border-style:none;
+	font-weight:inherit;
+	resize:none;
+	white-space:normal;
+	vertical-align:top;
+}
+
+.textarea_header
+{
+	font-weight:bold;
+	vertical-align:top;
+	position:absolute;
+	background-color:#FFFFFF;
+}
+
+select[disabled]
+{
+	color:inherit;
+}
+
+[readonly]
+{
+	cursor:default;
+}
+
+select
+{	
+	background-color:#FFFFFF;
+	border-style:none;	
+	font-weight:inherit;
+	-webkit-appearance:none;
+}
+
+select::-ms-expand
+{
+	display:none;
+}
+
+option
+{
+	background-color:#FFFFFF; 
+}
+
+div
+{
+	white-space:pre-wrap;
+}
+
+input:focus, textarea:focus
+{
+	outline:none;
+}
+
+.bold
+{
+	font-weight:bold;
+}
+
+.nobold
+{
+	font-weight:normal;
+}
+
+.underline
+{
+	border-bottom-style:solid;
+	border-bottom-color:#000000;
+	border-bottom-width:1px;
+}
+
+</style>
+
+<script language="JavaScript" type="text/javascript">
+var cookies = {};
+var set_cookies_onbeforeunload = true;
+//var store_initial = {};
+
+function parse_cookies()
+{
+	var cookies_list = document.cookie.split(';');
+	for(var n = 0; n < cookies_list.length; n++)
+	{
+		var cookie_item = trim_spaces_left(cookies_list[n]).split("=");
+		cookies[cookie_item[0]] = decodeURIComponent(cookie_item[1]);
+	}
+}
+
+function dump_cookies()
+{
+	var dump = "";
+	for(var cookie in cookies)
+	{
+		dump += cookie + ":" + cookies[cookie] + "\r\n";
+	}
+	return dump;
+}
+
+function set_cookie(name, value)
+{
+	document.cookie = name + "=" + encodeURIComponent(value) + "; path=/; max-age=2147483647";
+}
+
+var extended_values =
+{
+	"иммобилизация": "immobilization",
+	"профилактика тромбоза": "thrombosis"
+};
+
+var months_ru =
+[
+	"01:января",
+	"02:февраля",
+	"03:марта",
+	"04:апреля",
+	"05:мая",
+	"06:июня",
+	"07:июля",
+	"08:августа",
+	"09:сентября",
+	"10:октября",
+	"11:ноября",
+	"12:декабря"
+];
+
+function GetDateValue(date_id)
+{
+	var element_year = document.getElementById("year" + date_id);
+	if(element_year == null || element_year.value == "")
+	{
+		return null;
+	}
+
+	var element_month = document.getElementById("month" + date_id);
+	if(element_month == null || element_month.value == "")
+	{
+		return null;
+	}
+
+	var element_day = document.getElementById("day" + date_id);
+	if(element_day == null || element_day.value == "")
+	{
+		return null;
+	}
+	
+	return new Date(parseInt(element_year.value), parseInt(element_month.value, 10) - 1, parseInt(element_day.value, 10));
+}
+
+function calculate_duration()
+{
+	var duration = "";
+	var date_from = GetDateValue("_from");
+	var date_to = GetDateValue("_to");
+	if(date_from != null && date_to != null)
+	{
+		duration = (date_to - date_from)/1000/60/60/24 + 1;
+		if(duration <= 0)
+		{
+			duration = "";
+		}
+	}
+	
+	var element_duration = document.getElementById("duration");
+	if(element_duration != null)
+	{
+		element_duration.value = duration;
+		//element_duration.style.backgroundColor = (element_duration.value != "" ? "#FFFFFF" : "#FFFFB0");
+		validate_underline(element_duration);
+		element_duration.setAttribute("value", element_duration.value);
+	}
+}
+
+function calculate_next_date()
+{
+	var add_days = 0;
+
+	var element_day = document.getElementById("day_same");
+	var element_month = document.getElementById("month_same");
+	var element_year = document.getElementById("year_same");
+	if(element_day == null || element_month == null || element_year == null)
+	{
+		element_day = document.getElementById("day_next");
+		element_month = document.getElementById("month_next");
+		element_year = document.getElementById("year_next");
+		if(element_day == null || element_month == null || element_year == null)
+		{
+			return;
+		}
+
+		add_days = 1;
+	}
+
+	var date_to = GetDateValue("_to");
+	if(date_to != null)
+	{
+		var dt = new Date(date_to.getFullYear(), date_to.getMonth(), date_to.getDate() + add_days);
+		element_day.value = AddLeadingZero2(dt.getDate());
+		element_month.value = AddLeadingZero2(dt.getMonth() + 1);
+		element_year.value = dt.getFullYear();
+	}
+	else
+	{
+		element_day.value = "";
+		element_month.value = "";
+		element_year.value = "";
+	}
+
+	//element_day.style.backgroundColor = (element_day.value != "" ? "#FFFFFF" : "#FFFFB0");
+	validate_underline(element_day);
+	//element_month.style.backgroundColor = (element_month.value != "" ? "#FFFFFF" : "#FFFFB0");
+	validate_underline(element_month);
+	//element_year.style.backgroundColor = (element_year.value != "" ? "#FFFFFF" : "#FFFFB0");
+	validate_underline(element_year);
+
+	setAttributeSelectOptions(element_day);
+	setAttributeSelectOptions(element_month);
+	setAttributeSelectOptions(element_year);
+}
+
+function validate_date(date_id)
+{
+	var element_year = document.getElementById("year" + date_id);
+	if(element_year == null)
+	{
+		return;
+	}
+
+	var element_month = document.getElementById("month" + date_id);
+	if(element_month == null)
+	{
+		return;
+	}
+
+	var element_day = document.getElementById("day" + date_id);
+	if(element_day == null)
+	{
+		return;
+	}
+
+	if(element_year.value != "" && element_month.value != "" && element_day.value != "")
+	{	
+		var year = parseInt(element_year.value);
+		var month = parseInt(element_month.value, 10) - 1;
+		var day = parseInt(element_day.value, 10);
+		var dt = new Date(year, month, day);
+
+		element_month.value = AddLeadingZero2(dt.getMonth() + 1);
+		element_day.value = AddLeadingZero2(dt.getDate());
+	}
+	else if(element_year.value == "" && element_month.value == "" && element_day.value == "")
+	{
+		if(element_year.hasAttribute("current_date_keep") && element_month.hasAttribute("current_date_keep") && element_day.hasAttribute("current_date_keep"))
+		{
+			element_year.setAttribute("current_date", "");
+			element_month.setAttribute("current_date", "");
+			element_day.setAttribute("current_date", "");
+		}
+	}
+}
+
+function init_date_year(element, year)
+{
+	var current_date = element.hasAttribute("current_date");
+	var options = element.options;
+	if(options.length == 0)
+	{
+		var option = document.createElement("option");
+		option.value = "";
+		option.text = "";
+		options.add(option);
+
+		for(var n = -1; n <= 1; n++)
+		{
+			option = document.createElement("option");
+			option.value = year + n;
+			option.text = year + n;
+			if(current_date && option.value == year)
+			{
+				option.setAttribute("selected", "");
+			}
+			options.add(option);
+		}
+	}
+
+	if(current_date)
+	{
+		element.removeAttribute("current_date");
+		element.setAttribute("current_date_keep", "");
+		element.value = year;
+	}
+}
+
+function init_date_month(element, month)
+{
+	var current_date = element.hasAttribute("current_date");
+	var options = element.options;
+	if(options.length == 0)
+	{
+		var option = document.createElement("option");
+		option.value = "";
+		option.text = "";
+		options.add(option);
+
+		for(var n = 0; n < months_ru.length; n++)
+		{
+			var items = months_ru[n].split(":");
+			option = document.createElement("option");
+			option.value = items[0];
+			option.text = items[1];
+			if(current_date && option.value == month)
+			{
+				option.setAttribute("selected", "");
+			}
+			options.add(option);
+		}
+	}
+
+	if(current_date)
+	{
+		element.removeAttribute("current_date");
+		element.setAttribute("current_date_keep", "");
+		element.value = month;		
+	}
+}
+
+function init_date_day(element, day)
+{
+	var current_date = element.hasAttribute("current_date");
+	var options = element.options;
+	if(options.length == 0)
+	{
+		var option = document.createElement("option");
+		option.value = "";
+		option.text = "";
+		options.add(option);
+
+		for(var n = 1; n <= 31; n++)
+		{
+			option = document.createElement("option");
+			option.value = AddLeadingZero2(n);
+			option.text = AddLeadingZero2(n);
+			if(current_date && option.value == day)
+			{
+				option.setAttribute("selected", "");
+			}
+
+			options.add(option);
+		}	
+	}
+
+	if(current_date)
+	{
+		element.removeAttribute("current_date");
+		element.setAttribute("current_date_keep", "");
+		element.value = day;
+	}
+}
+
+function init_date()
+{
+	var dt = new Date();
+	var dt_items =
+	{
+		"day": AddLeadingZero2(dt.getDate()),
+		"month": AddLeadingZero2(dt.getMonth() + 1),
+		"year": dt.getFullYear()
+	};
+
+	var elements = document.getElementsByTagName("SELECT");
+	for(var n = 0; n < elements.length; n++)
+	{
+		var element = elements[n];
+		var value = null;
+		for(var dt_item in dt_items)
+		{
+			if(element.id.indexOf(dt_item) == 0)
+			{
+				value = dt_items[dt_item];
+				break;
+			}
+		}
+		
+		if(value != null)
+		{
+			this["init_date_" + dt_item](element, value);			
+		}
+	}
+
+	calculate_duration();
+
+	calculate_next_date();
+}
+
+function validate_underline(element)
+{
+	if(element.id == "copy")
+	{
+		//console.log("validate_underline, copy");
+		return;
+	}
+
+	//console.log("validate_underline, element.parentElement.tagName: " + element.parentElement.tagName);
+	element.style.backgroundColor = (element.value != "" ? "#FFFFFF" : (element.disabled || element.readOnly ? "#F0F0F0" : "#FFFFB0"));
+
+	if(element.parentElement != null && (element.parentElement.tagName == "TD" || element.parentElement.tagName == "SPAN"))
+	{		
+		element.parentElement.style.borderBottomColor = (element.value != "" ? "#FFFFFF" : "#000000");
+		//element.parentElement.style.paddingBottom = "1px";
+
+		if(element.parentElement.tagName == "SPAN")
+		{
+			element.parentElement.style.paddingBottom = "1px";
+			element.parentElement.style.borderBottomStyle = "solid";
+			element.parentElement.style.borderBottomWidth = "1px";
+		}
+	}
+}
+
+function init_element(element)
+{	
+	if(element.hasAttribute("storekeep")) //for locally saved html
+	{
+		element.removeAttribute("storekeep");
+	}
+
+	var store = element.getAttribute("store");
+	if(store != null && store != "")
+	{
+		var value = cookies[store];
+		if(value != undefined)
+		{
+			//console.log("cookies: " + value);
+			//alert("cookies: " + value);
+			element.value = value;
+			if(element.tagName == "SELECT")
+			{
+				setAttributeSelectOptions(element);
+			}
+		}
+
+		//store_initial[store] = element.value;
+		element.removeAttribute("store");
+		element.setAttribute("storekeep", store);
+	}
+
+	validate_underline(element);
+}
+
+function clear_inputs()
+{
+	var elements = document.getElementsByTagName("INPUT");
+	for(var n = 0; n < elements.length; n++)
+	{
+		var element = elements[n];
+		if(element.type == "text" || element.type == "number")
+		{
+			init_element(element);
+
+			if(element.parentElement.tagName == "TD")
+			{
+				var prev = element.parentElement.previousElementSibling;
+				if(prev != null && prev.tagName == "TD")
+				{
+					var prev_char = (prev.innerText != "" ? prev.innerText.charAt(prev.innerText.length - 1) : "");										
+					if(prev_char != "" && prev_char != " " && prev_char != "/" && prev.innerHTML != "&nbsp;")
+					{
+						prev.style.paddingRight = "1ch";
+					}
+				}
+
+				var next = element.parentElement.nextElementSibling;
+				if(next != null && next.tagName == "TD")
+				{
+					var next_char = (next.innerText != "" ? next.innerText.charAt(0) : "");				
+					if(next_char != "" && next_char != "," && next_char != ";" && next_char != " " && next.innerHTML != "&nbsp;")
+					{
+						next.style.paddingLeft = "1ch";
+					}
+				}
+			}
+
+			if(element.hasAttribute("extended_value"))
+			{
+				process_extended_value(element);
+			}
+		}
+	}
+
+	elements = document.getElementsByTagName("TEXTAREA");
+	for(var n = 0; n < elements.length; n++)
+	{
+		var element = elements[n];	
+		
+		var value = element.getAttribute("storevalue");
+		if(value != null)
+		{
+			element.value = unescape(value);
+		}
+		
+		validate_underline(element);
+
+		var prev = element.previousElementSibling;
+		if(prev != null && prev.tagName == "SPAN")
+		{			
+			element.style.textIndent = prev.offsetWidth + "px"; //if body.style.display == none then offsetWidth == 0
+		}
+	}
+	
+	elements = document.getElementsByTagName("SELECT");
+	for(var n = 0; n < elements.length; n++)
+	{
+		var element = elements[n];
+		init_element(element);
+	}
+}
+
+function setAttributeSelectOptions(element)
+{
+	var selectedIndex = element.selectedIndex;
+	var options = element.options;	
+	for(var n = 0; n < options.length; n++)
+	{
+		var option = options[n];
+		if(n == selectedIndex)
+		{
+			option.setAttribute("selected", "");
+		}
+		else
+		{
+			option.removeAttribute("selected");
+		}
+	}
+}
+
+function process_extended_value(element)
+{
+	var next = element.nextElementSibling;
+	if(next == null || next.tagName != "SPAN")
+	{
+		return;
+	}
+	
+	var extended_HTML = "";
+	var extended_id = extended_values[trim_spaces(element.value).toLowerCase()];
+	if(extended_id != undefined)
+	{
+		var extended_element = document.getElementById(extended_id);
+		if(extended_element != null)
+		{
+			extended_HTML = ": <span>" + extended_element.outerHTML + "</span>";
+		}
+	}
+	
+	if(extended_HTML != "")
+	{
+		if(next.innerHTML != extended_HTML)
+		{
+			next.innerHTML = extended_HTML;
+			var measure_text = document.getElementById("measure_text");
+			measure_text.innerText = element.value + "0";
+			measure_text.style.display = "";
+			var width = measure_text.offsetWidth;			
+			measure_text.style.display = "none";
+			measure_text.innerText = "";
+			element.style.width = width + "px";
+
+			validate_underline(next.firstElementChild.firstElementChild); //nested span -> span -> select
+		}		
+	}
+	else if(next.innerHTML != "")
+	{
+		next.innerHTML = "";
+		element.style.width = "";
+	}
+}
+
+function body_onchange()
+{
+	var target = event.target; //event.srcElement, this
+	if(target.tagName == "INPUT" && (target.type == "text" || target.type == "number"))
+	{
+		//target.style.backgroundColor = (target.value != "" ? "#FFFFFF" : "#FFFFB0");
+		validate_underline(target);		
+		target.setAttribute("value", target.value);		
+		//set_cookie(name, value);
+		if(target.hasAttribute("extended_value"))
+		{
+			process_extended_value(target);
+		}
+
+		if(target.name == "local_status" && typeof(CopyLocalStatus_validate) == "function")
+		{
+			CopyLocalStatus_validate();
+		}
+	}
+
+	if(target.tagName == "TEXTAREA")
+	{
+		//target.style.backgroundColor = (target.value != "" ? "#FFFFFF" : "#FFFFB0");
+		validate_underline(target);
+		target.setAttribute("storevalue", escape_textarea(target.value));
+		//set_cookie(name, value);
+
+		if(target.name == "local_status" && typeof(CopyLocalStatus_validate) == "function")
+		{
+			CopyLocalStatus_validate();
+		}
+
+		if(target.id == "diagnosis" && typeof(CopyDiagnosis_validate) == "function")
+		{
+			CopyDiagnosis_validate();
+		}
+	}
+
+	if(target.tagName == "SELECT")
+	{
+		var dt_items = ["day", "month", "year"];
+		for(var n = 0; n < dt_items.length; n++)
+		{
+			var dt_item = dt_items[n];
+			if(target.id.indexOf(dt_item) == 0)
+			{
+				var date_id = target.id.substring(dt_item.length, target.id.length);
+				validate_date(date_id);
+
+				if(date_id == "_from" || date_id == "_to")
+				{		
+					calculate_duration();
+				}
+				
+				if(date_id == "_to")
+				{
+					calculate_next_date();
+				}
+
+				break;
+			}
+		}
+
+		//target.style.backgroundColor = (target.value != "" ? "#FFFFFF" : "#FFFFB0");
+		validate_underline(target);
+		setAttributeSelectOptions(target);
+
+		if(target.name == "local_status" && typeof(CopyLocalStatus_validate) == "function")
+		{
+			CopyLocalStatus_validate();
+		}
+	}
+}
+
+function SetElementTitle()
+{
+	var element = document.getElementById("title");
+	if(element != null)
+	{
+		element.innerText = document.title;
+		var parent = element.parentElement;
+		while(parent != null)
+		{
+			if(parent.tagName == "TABLE")
+			{
+				//parent.style.marginBottom = "0.2em";
+				break;
+			}
+			parent = parent.parentElement;
+		}
+	}
+}
+
+function body_onkeyup()
+{
+	body_onchange();
+}
+
+function body_onload()
+{
+	parse_cookies();	
+	SetElementTitle();
+	init_date();	
+	clear_inputs();
+	//document.body.style.visibility = "visible";
+	if(typeof(body_onload_ext) == "function")
+	{
+		body_onload_ext();
+	}	
+	window.setTimeout("window.focus()", 0);
+}
+
+function store_cookies()
+{
+	var elements = document.querySelectorAll("[storekeep]");
+	for(var n = 0; n < elements.length; n++)
+	{
+		var element = elements[n];
+		var storekeep = element.getAttribute("storekeep");
+		if(storekeep != null && storekeep != "")
+		{
+			set_cookie(storekeep, element.value);
+		}
+	}
+}
+
+function body_onbeforeunload()
+{
+	if(set_cookies_onbeforeunload)
+	{
+		store_cookies();
+	}
+}
+
+function Clear()
+{
+	if(confirm(event.target.value + "?"))
+	{
+		set_cookies_onbeforeunload = false;
+		window.location.reload(true);
+	}
+}
+
+function Print()
+{
+	//alert(dump_cookies());	
+	window.print();
+}
+
+function AddLeadingZero2(value)
+{
+	value = new String(value);
+	return "00".substring(0, 2 - value.length) + value;
+}
+
+function trim_spaces_left(s)
+{
+	return s.replace(/^\s+/, "");
+}
+
+function trim_spaces(s)
+{
+	//return s.replace(/\s*$/, "").replace(/^\s*/, "");
+	return s.replace(/^\s+|\s+$/g, "");
+}
+
+function escape_textarea(str)
+{
+	return str.replace(/\r/g, "%0D").replace(/\n/g, "%0A").replace(/\t/g, "%09");
+}
+
+function CopyToClipboard1(data)
+{
+	try
+	{	
+		navigator.clipboard.writeText(data); //works for localhost and for saved HTML, but requires permissions for web server
+		//document.execCommand("copy");
+		//window.clipboardData.setData("Text", data); //not supported in Chrome
+	}
+	catch(err)
+	{
+		alert(err);
+	}
+}
+
+function CopyToClipboard2(data)
+{
+	var element_copy = document.getElementById("copy");
+	element_copy.value = data;
+	
+	try
+	{
+		element_copy.select();
+		document.execCommand("copy");
+	}
+	catch(err)
+	{
+		alert(err);
+	}
+
+	element_copy.value = "";
+	element_copy.blur();
+}
+
+</script>
+
+</head>
+
+<body onload="body_onload()" onbeforeunload="body_onbeforeunload()" onchange="body_onchange()" onkeyup="body_onkeyup()">
+                                                                                  
+<table class="bold"><tbody><tr>
+	<td>«</td>
+	<td style="border-bottom-color: rgb(255, 255, 255);"><select id="day_to" size="1" current_date_keep="" style="background-color: rgb(255, 255, 255);"><option value=""></option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21" selected="">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select></td>
+	<td>»</td>
+	<td style="border-bottom-color: rgb(255, 255, 255);"><select id="month_to" size="1" current_date_keep="" style="background-color: rgb(255, 255, 255);"><option value=""></option><option value="01">января</option><option value="02">февраля</option><option value="03">марта</option><option value="04" selected="">апреля</option><option value="05">мая</option><option value="06">июня</option><option value="07">июля</option><option value="08">августа</option><option value="09">сентября</option><option value="10">октября</option><option value="11">ноября</option><option value="12">декабря</option></select></td>
+	<td>&nbsp;</td>
+	<td style="border-bottom-color: rgb(255, 255, 255);"><select id="year_to" size="1" current_date_keep="" style="background-color: rgb(255, 255, 255);"><option value=""></option><option value="2019">2019</option><option value="2020" selected="">2020</option><option value="2021">2021</option></select></td>
+	<td>&nbsp;г.</td>	
+	<td style="width:25%"></td>
+	<td style="width:75%" id="title">ЭПИКРИЗ НА ВК</td>
+</tr></tbody></table>
+
+<table><tbody><tr>
+	<td class="bold" style="padding-right: 1ch;">ФИО</td>
+	<td style="width: 60%; border-bottom-color: rgb(0, 0, 0);"><input type="text" style="background-color: rgb(255, 255, 176);"></td>
+	<td class="bold" style="padding-left: 1ch; padding-right: 1ch;">должность</td>
+	<td style="width: 40%; border-bottom-color: rgb(0, 0, 0);"><input type="text" style="background-color: rgb(255, 255, 176);"></td>
+</tr></tbody></table>
+
+<table class="bold"><tbody><tr>
+	<td style="padding-right: 1ch;">на л/н №</td>
+	<td style="width: 80%; border-bottom-color: rgb(0, 0, 0);" class="nobold"><input type="text" style="background-color: rgb(255, 255, 176);"></td>
+	<td style="padding-left: 1ch;">с «</td>
+	<td style="border-bottom-color: rgb(0, 0, 0);"><select id="day_from" size="1" style="background-color: rgb(255, 255, 176);"><option value=""></option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select></td>
+	<td>»</td>
+	<td style="border-bottom-color: rgb(0, 0, 0);"><select id="month_from" size="1" style="background-color: rgb(255, 255, 176);"><option value=""></option><option value="01">января</option><option value="02">февраля</option><option value="03">марта</option><option value="04">апреля</option><option value="05">мая</option><option value="06">июня</option><option value="07">июля</option><option value="08">августа</option><option value="09">сентября</option><option value="10">октября</option><option value="11">ноября</option><option value="12">декабря</option></select></td>
+	<td>&nbsp;</td>
+	<td style="border-bottom-color: rgb(0, 0, 0);"><select id="year_from" size="1" style="background-color: rgb(255, 255, 176);"><option value=""></option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option></select></td>
+	<td style="padding-right: 1ch;">&nbsp;г.</td>
+	<td style="width: 15%; border-bottom-color: rgb(0, 0, 0);"><input type="text" id="duration" readonly="" style="text-align: right; background-color: rgb(240, 240, 240);" title="Заполняется автоматически" value=""></td>
+	<td style="width: 5%; padding-left: 1ch;">дней.</td>
+</tr></tbody></table>
+
+<table><tbody><tr>	
+	<td style="width: 100%; border-bottom-color: rgb(0, 0, 0);"><span class="textarea_header">Диагноз:&nbsp;</span><textarea rows="3" style="background-color: rgb(255, 255, 176); text-indent: 68px;"></textarea></td>
+</tr></tbody></table>
+
+<table><tbody><tr>
+	<td class="bold" style="padding-right: 1ch;">Стационарное лечение в ГКБ №</td>
+	<td style="width: 100%; border-bottom-color: rgb(0, 0, 0);"><input type="text" style="background-color: rgb(255, 255, 176);"></td>
+	<td style="padding-left: 1ch;">с «</td>
+	<td style="border-bottom-color: rgb(0, 0, 0);"><select id="day2" size="1" style="background-color: rgb(255, 255, 176);"><option value=""></option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select></td>
+	<td>»</td>
+	<td style="border-bottom-color: rgb(0, 0, 0);"><select id="month2" size="1" style="background-color: rgb(255, 255, 176);"><option value=""></option><option value="01">января</option><option value="02">февраля</option><option value="03">марта</option><option value="04">апреля</option><option value="05">мая</option><option value="06">июня</option><option value="07">июля</option><option value="08">августа</option><option value="09">сентября</option><option value="10">октября</option><option value="11">ноября</option><option value="12">декабря</option></select></td>
+	<td>&nbsp;</td>
+	<td style="border-bottom-color: rgb(0, 0, 0);"><select id="year2" size="1" style="background-color: rgb(255, 255, 176);"><option value=""></option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option></select></td>
+	<td>&nbsp;г. по «</td>
+	<td style="border-bottom-color: rgb(0, 0, 0);"><select id="day3" size="1" style="background-color: rgb(255, 255, 176);"><option value=""></option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select></td>
+	<td>»</td>
+	<td style="border-bottom-color: rgb(0, 0, 0);"><select id="month3" size="1" style="background-color: rgb(255, 255, 176);"><option value=""></option><option value="01">января</option><option value="02">февраля</option><option value="03">марта</option><option value="04">апреля</option><option value="05">мая</option><option value="06">июня</option><option value="07">июля</option><option value="08">августа</option><option value="09">сентября</option><option value="10">октября</option><option value="11">ноября</option><option value="12">декабря</option></select></td>	
+	<td>&nbsp;</td>
+	<td style="border-bottom-color: rgb(0, 0, 0);"><select id="year3" size="1" style="background-color: rgb(255, 255, 176);"><option value=""></option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option></select></td>
+	<td>&nbsp;г.</td>
+</tr></tbody></table>
+
+<table><tbody><tr>
+	<td class="bold">Динамика состояния:&nbsp;</td>
+	<td style="border-bottom-color: rgb(0, 0, 0);"><select size="1" style="background-color: rgb(255, 255, 176);">
+		<option></option>
+		<option>положительная</option>
+		<option>отрицательная</option>
+		<option>без динамики</option>
+	</select></td>
+	<td style="width:100%"></td>
+</tr></tbody></table>
+
+<table><tbody><tr>	
+	<td style="width: 100%; border-bottom-color: rgb(0, 0, 0);"><span class="textarea_header">Объективно:&nbsp;</span><textarea rows="5" style="background-color: rgb(255, 255, 176); text-indent: 98px;"></textarea></td>
+</tr></tbody></table>
+
+<table><tbody><tr>
+	<td class="bold" style="padding-right: 1ch;">Проведенное лечение:</td>
+	<td style="width: 100%; border-bottom-color: rgb(0, 0, 0);"><input type="text" style="background-color: rgb(255, 255, 176);"></td>
+</tr></tbody></table>
+
+<table><tbody><tr>
+	<td class="bold" style="padding-right: 1ch;">Планируется:</td>
+	<td style="width: 100%; border-bottom-color: rgb(0, 0, 0);"><input type="text" style="background-color: rgb(255, 255, 176);"></td>
+</tr></tbody></table>
+
+<table class="bold"><tbody><tr>
+	<td>Нуждается в продлении л/н&nbsp;</td>
+	<td>с «</td>
+	<td style="border-bottom-color: rgb(255, 255, 255);"><select id="day_next" size="1" disabled="" title="Заполняется автоматически" style="background-color: rgb(255, 255, 255);"><option value=""></option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22" selected="">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select></td>
+	<td>»</td>
+	<td style="border-bottom-color: rgb(255, 255, 255);"><select id="month_next" size="1" disabled="" title="Заполняется автоматически" style="background-color: rgb(255, 255, 255);"><option value=""></option><option value="01">января</option><option value="02">февраля</option><option value="03">марта</option><option value="04" selected="">апреля</option><option value="05">мая</option><option value="06">июня</option><option value="07">июля</option><option value="08">августа</option><option value="09">сентября</option><option value="10">октября</option><option value="11">ноября</option><option value="12">декабря</option></select></td>
+	<td>&nbsp;</td>
+	<td style="border-bottom-color: rgb(255, 255, 255);"><select id="year_next" size="1" disabled="" title="Заполняется автоматически" style="background-color: rgb(255, 255, 255);"><option value=""></option><option value="2019">2019</option><option value="2020" selected="">2020</option><option value="2021">2021</option></select></td>
+	<td>&nbsp;г. по «</td>
+	<td style="border-bottom-color: rgb(0, 0, 0);"><select id="day5" size="1" style="background-color: rgb(255, 255, 176);"><option value=""></option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select></td>
+	<td>»</td>
+	<td style="border-bottom-color: rgb(0, 0, 0);"><select id="month5" size="1" style="background-color: rgb(255, 255, 176);"><option value=""></option><option value="01">января</option><option value="02">февраля</option><option value="03">марта</option><option value="04">апреля</option><option value="05">мая</option><option value="06">июня</option><option value="07">июля</option><option value="08">августа</option><option value="09">сентября</option><option value="10">октября</option><option value="11">ноября</option><option value="12">декабря</option></select></td>	
+	<td>&nbsp;</td>
+	<td style="border-bottom-color: rgb(0, 0, 0);"><select id="year5" size="1" style="background-color: rgb(255, 255, 176);"><option value=""></option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option></select></td>
+	<td>&nbsp;г.</td>
+	<td style="width:100%"></td>
+</tr></tbody></table>
+
+<table class="bold"><tbody><tr>
+	<td>Явка на прием&nbsp;</td>
+	<td>«</td>
+	<td style="border-bottom-color: rgb(0, 0, 0);"><select id="day6" size="1" style="background-color: rgb(255, 255, 176);"><option value=""></option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select></td>
+	<td>»</td>
+	<td style="border-bottom-color: rgb(0, 0, 0);"><select id="month6" size="1" style="background-color: rgb(255, 255, 176);"><option value=""></option><option value="01">января</option><option value="02">февраля</option><option value="03">марта</option><option value="04">апреля</option><option value="05">мая</option><option value="06">июня</option><option value="07">июля</option><option value="08">августа</option><option value="09">сентября</option><option value="10">октября</option><option value="11">ноября</option><option value="12">декабря</option></select></td>
+	<td>&nbsp;</td>
+	<td style="border-bottom-color: rgb(0, 0, 0);"><select id="year6" size="1" style="background-color: rgb(255, 255, 176);"><option value=""></option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option></select></td>
+	<td>&nbsp;г.</td>
+	<td style="width:100%"></td>
+</tr></tbody></table>
+
+<table><tbody><tr>
+	<td class="bold">Врач</td>
+	<td style="width:40%" class="underline">&nbsp;</td>
+	<td>&nbsp;</td>
+	<td style="border-bottom-color: rgb(255, 255, 255);"><select size="1" storekeep="member2" style="background-color: rgb(255, 255, 255);">
+		<option></option>
+<option selected="">Панин А.В.</option>
+<option>Магомедов Д.М.</option>
+<option>Черсак Я.В.</option>
+<option>Деев И.Е.</option>
+<option>Огнивенко Л.В.</option>
+<option>Жежеря Э.В.</option>
+<option>Хохлов И.В.</option>
+<option>Барчук И.В.</option>
+<option>Балкаров А.А.</option>
+
+	</select></td>
+	<td style="width:20%"></td>
+	<td class="bold">Зав.отд.</td>
+	<td style="width:40%" class="underline">&nbsp;</td>
+	<td>&nbsp;</td>
+	<td style="border-bottom-color: rgb(255, 255, 255);"><select size="1" storekeep="chairman" style="background-color: rgb(255, 255, 255);">
+		<option></option>
+<option>Панин А.В.</option>
+<option>Магомедов Д.М.</option>
+<option selected="">Черсак Я.В.</option>
+<option>Деев И.Е.</option>
+<option>Огнивенко Л.В.</option>
+<option>Жежеря Э.В.</option>
+<option>Хохлов И.В.</option>
+<option>Барчук И.В.</option>
+<option>Балкаров А.А.</option>
+
+	</select></td>
+</tr></tbody></table>
+
+<hr class="cutline">
+
+<span id="measure_text" style="display:none;visibility:hidden;width:auto;overflow:auto"></span>
+
+<table class="noprint">
+	<tbody><tr>		
+		<td style="width:100%;color:#808080;font-size:10pt">Поддерживаемые браузеры - Google Chrome, Яндекс.Браузер<input type="text" id="copy" value="" class="noprint" style="width:1px;height:1px"></td>
+		<td class="button"><input type="button" value="Сбросить изменения" onclick="Clear()" style="width:12em;font-size:10pt"></td>
+		<td class="button"><input type="button" value="Печать" onclick="Print()" style="width:6em;font-size:10pt"></td>
+	</tr>
+	<tr>		
+		<td colspan="3" style="width:100%;color:#808080;font-size:10pt">Для сохранения формы в виде HTML файла нажмите правую кнопку и выберите "Сохранить как..."</td>
+	</tr>
+	<tr>
+		<td colspan="3" style="width:100%;color:#808080;font-size:10pt">Если текущая дата очищена перед сохранением формы, то при открытии сохраненной формы она будет текущей.</td>
+	</tr>
+</tbody></table>
+
+
+
+
+</body></html>
